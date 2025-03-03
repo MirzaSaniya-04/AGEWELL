@@ -1,0 +1,178 @@
+<html>
+<head>
+    <style>
+        h1{
+            background-color: #32be8f;
+            color: white;
+            height: 80px;
+            padding-top: 35px;
+            font-family: "Poppins";
+            width:100%;
+            padding-left:30px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline; 
+        }
+        a:visited {
+            color: #800080; 
+        }
+        .related-articles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-left:100px;
+        }
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .article-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .article-content {
+            padding: 15px;
+        }
+        .article-content h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #007bff;
+        }
+        .article-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 8px 0;
+        }
+        .article-info .author {
+            font-weight: bold;
+        }
+        .article-summary {
+            font-size: 0.9em;
+            color: #333;
+        }
+        @media (min-width: 1200px) {
+            .related-articles {
+                grid-template-columns: repeat(4, 1fr); 
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .related-articles {
+                grid-template-columns: repeat(3, 1fr); 
+            }
+        }
+        @media (min-width: 576px) and (max-width: 767px) {
+            .related-articles {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+        @media (max-width: 575px) {
+            .related-articles {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Related Articles</h1>
+    <div class="related-articles">
+        <div class="article-card">
+            <img src="https://www.apa.org/images/psychology-aging-title-image_tcm7-244107.jpg" alt="Elderly Care Guide">
+            <div class="article-content">
+                <h3><a href="https://www.apa.org/pi/aging/resources/guides/psychology-and-aging">Healthy Aging: Physical and Mental Well-being for Older Adults</a></h3>
+                <div class="article-info">
+                    <span class="author">By American Psychological Association</span>
+                    <span class="date">Published: Updated regularly</span>
+                </div>
+                <p class="article-summary">This guide discusses various strategies for maintaining both mental and physical health, including exercise, staying socially active, and managing chronic conditions.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://th.bing.com/th/id/OIP.5mHYlhY4HOuivc7ZcrW5ugHaEK?rs=1&pid=ImgDetMain" alt="Physical Health for Seniors">
+            <div class="article-content">
+                <h3><a href="https://www.who.int/news-room/fact-sheets/detail/mental-health-of-older-adults">Mental Health and Well-being in Older Age</a></h3>
+                <div class="article-info">
+                    <span class="author">By  World Health Organization (WHO)</span>
+                    <span class="date">Published: 2022</span>
+                </div>
+                <p class="article-summary">The article covers the importance of mental well-being and its relation to physical health, focusing on reducing loneliness and increasing physical activity.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://assets.clevelandclinic.org/transform/LargeFeatureImage/9da1b28f-8e89-459d-a67a-099de25f4e48/grandmaVideoChat-463246133-770x553-1_jpg" alt="Mental Health for Seniors">
+            <div class="article-content">
+                <h3><a href="https://health.clevelandclinic.org/depression-in-elderly" target="_blank">Older Adults and Mental Health: What To Watch for and How To Help</a></h3>
+                <div class="article-info">
+                    <span class="author">By Cleveland Clinic</span>
+                    <span class="date">Published: August 2023</span>
+                </div>
+                <p class="article-summary">This article shares eight practical tips to maintain mental health well for the elderly.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://kentuckycounselingcenter.com/wp-content/uploads/2021/03/mentally-healthy-senior-lady-2048x1357.jpg" alt="Caregiving Tips">
+            <div class="article-content">
+                <h3><a href="https://kentuckycounselingcenter.com/8-mental-health-tips-for-seniors-or-the-elderly/#:~:text=Mental%20Health%20Tips%20for%20Seniors%201%201.%20Start,8.%20Get%20Enough%20Sleep%20and%20Eat%20Well%20" target="_blank">8 Mental Health Tips for the elderly</a></h3>
+                <div class="article-info">
+                    <span class="author">By Kentucky Counseling Center</span>
+                    <span class="date">Published: 2023</span>
+                </div>
+                <p class="article-summary">This scoping review examines factors that influence mental health in older adults, including environmental and social determinants.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/15690/gettyimages-1212768319.jpg" alt="Nutrition for Elderly">
+            <div class="article-content">
+                <h3><a href="https://www.health.harvard.edu/" target="_blank">Aging Well: A Guide to Physical and Mental Health for Seniors</a></h3>
+                <div class="article-info">
+                    <span class="author">By Harvard Medical School</span>
+                    <span class="date">Published: 2020</span>
+                </div>
+                <p class="article-summary">This comprehensive guide discusses how regular physical activity and mental engagement can stave off aging-related illnesses.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://www.ncoa.org/_next/image/?url=https%3A%2F%2Fassets-us-01.kc-usercontent.com%3A443%2Fffacfe7d-10b6-0083-2632-604077fd4eca%2Ffc522e77-585c-4343-b289-8d75bab28886%2Fcovid-mental-health-blog-header.png&w=1920&q=75" alt="Social Connections for Seniors">
+            <div class="article-content">
+                <h3><a href="https://www.ncoa.org/article/7-ways-older-adults-can-manage-their-mental-health/" target="_blank">7 Ways Older Adults Can Manage Their Mental Health</a></h3>
+                <div class="article-info">
+                    <span class="author">By National Council Of Aging(NCOA)</span>
+                    <span class="date">Published: Sept 2024</span>
+                </div>
+                <p class="article-summary">NCOA discusses seven ways to manage the mental health of the elderly.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://i.ytimg.com/vi/-ZVhxgNA0_w/maxresdefault.jpg" alt="Medical Care for Seniors">
+            <div class="article-content">
+                <h3><a href="https://www.proactivepsychology.com.au/mental-well-being-in-seniors/#:~:text=Unlock%204%20strategies%20for%20enhancing%20mental%20health%20in%20seniors,%20focusing" target="_blank">4 Strategies to Support Mental Well-being for Seniors</a></h3>
+                <div class="article-info">
+                    <span class="author">By Proactive Psychology</span>
+                    <span class="date"></span>
+                </div>
+                <p class="article-summary">A guide to understand the challenges in aging gracefully discussed by Proactive Psychology, suggests to depend on friends, family and social circle more.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/article_thumbnails/site_front_toc_redesign/more_on/MoreOn_CompassHealthAging.png?resize=300px:*&output-quality=75" alt="Emotional Support for Seniors">
+            <div class="article-content">
+                <h3><a href="https://www.webmd.com/healthy-aging/mental-health-in-older-adults" target="_blank">What to Know About Mental Health in Older Adults</a></h3>
+                <div class="article-info">
+                    <span class="author">By WebMD Editorial Contributors </span>
+                    <span class="date">Published: March, 2024</span>
+                </div>
+                <p class="article-summary">Effective ways to offer emotional support and care to elderly individuals.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

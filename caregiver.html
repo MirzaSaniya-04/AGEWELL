@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caregiver Services - Agewell</title>
+  <style>
+    /* CSS Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .services {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #4CAF50;
+    }
+
+    h3 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .modal h3 {
+      color: #4CAF50;
+    }
+
+    .close-modal {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .close-modal:hover {
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agewell Caregiver Services</h1>
+    <p>Your trusted partner in compassionate care.</p>
+  </header>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="service-card" onclick="openModal('companionCareModal')">
+        <h3>Companion Care</h3>
+        <a href="companion.html" >Companion Service</a>
+        <p>Providing companionship and conversation to prevent loneliness and support mental well-being.</p>
+      </div>
+      <div class="service-card" onclick="openModal('personalCareModal')">
+        <h3>Personal Care</h3>
+        <a href="personalcare.html">Personal care Service</a>
+        <p>Assistance with daily tasks like bathing, dressing, and grooming to maintain independence.</p>
+      </div>
+      <div class="service-card" onclick="openModal('mealPrepModal')">
+        <h3>Meal Preparation</h3>
+        <a href="mealprepartion.html">Meal Preparation Service</a>
+        <p>Nutritional meal planning and preparation for healthy living.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Companion Care -->
+  <div id="companionCareModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('companionCareModal')">&times;</span>
+      <h3>Companion Care</h3>
+      <p>Our companion care services offer clients a friendly face and supportive conversation, helping to prevent loneliness and foster a sense of belonging and well-being. This includes regular visits, engaging activities, and emotional support.</p>
+    </div>
+  </div>
+
+  <!-- Modal for Personal Care -->
+  <div id="personalCareModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('personalCareModal')">&times;</span>
+      <h3>Personal Care</h3>
+      <p>Personal care services assist clients with essential daily activities like bathing, dressing, and grooming. Our caregivers ensure safety, dignity, and independence while providing compassionate assistance tailored to each individual’s needs.</p>
+    </div>
+  </div>
+
+  <!-- Modal for Meal Preparation -->
+  <div id="mealPrepModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('mealPrepModal')">&times;</span>
+      <h3>Meal Preparation</h3>
+      <p>We provide meal preparation services to promote balanced nutrition and healthy eating habits. This includes personalized meal planning, grocery shopping, cooking, and ensuring our clients enjoy tasty, nutritious meals every day.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Contact us for more information on our caregiver services.</p>
+  </footer>
+
+  <script>
+    // JavaScript for Modal Functionality
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'flex';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Care - Agewell</title>
+  <style>
+    /* Basic Page Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 1.5rem;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .content {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .content h2 {
+      color: #4CAF50;
+      font-size: 1.8rem;
+      margin-top: 0;
+    }
+
+    .content p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .form-group {
+      margin: 1rem 0;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .submit-button {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+
+    .solution {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: #e0f7fa;
+      border: 1px solid #b2ebf2;
+      border-radius: 4px;
+      display: none; /* Hidden by default */
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Personal Care Services</h1>
+  </header>
+
+  <!-- Main Content Section -->
+  <div class="content">
+    <h2>Tell Us About Your Health Condition</h2>
+    <p>Please describe your health condition, and our AI will provide suggestions for personal care solutions.</p>
+
+    <div class="form-group">
+      <label for="healthCondition">Health Condition:</label>
+      <textarea id="healthCondition" rows="4" placeholder="Describe your health condition..."></textarea>
+    </div>
+
+    <button class="submit-button" id="submitBtn">Get Suggestions</button>
+
+    <div class="solution" id="solution">
+      <h3>Suggestions:</h3>
+      <p id="suggestionText"></p>
+    </div>
+
+    <a href="home1.php#contactus" class="submit-button">Contact Us</a>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Agewell Caregiver Services | Contact us for more information on how we can help.</p>
+  </footer>
+
+  <!-- JavaScript for Processing Input -->
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', function() {
+      const healthCondition = document.getElementById('healthCondition').value;
+      const solutionDiv = document.getElementById('solution');
+      const suggestionText = document.getElementById('suggestionText');
+  
+      // Simulated AI response (this is where you would connect to your AI model)
+      if (healthCondition) {
+        suggestionText.textContent = analyzeCondition(healthCondition);
+        solutionDiv.style.display = 'block';
+      } else {
+        suggestionText.textContent = "Please describe your health condition.";
+        solutionDiv.style.display = 'block';
+      }
+    });
+  
+    // Simulated AI Analysis Function
+    function analyzeCondition(condition) {
+      // Basic analysis simulation
+      if (condition.toLowerCase().includes('diabetes')) {
+        return "For diabetes management, consider a balanced diet rich in fiber, regular exercise, and routine monitoring of blood sugar levels. Consult with your healthcare provider for personalized advice.";
+      } else if (condition.toLowerCase().includes('hypertension')) {
+        return "For hypertension, a low-sodium diet, regular physical activity, and stress management techniques can be beneficial. It's essential to follow your doctor's recommendations.";
+      } else if (condition.toLowerCase().includes('arthritis')) {
+        return "For arthritis relief, gentle exercises, hot or cold compresses, and anti-inflammatory foods can help. Speak with a specialist for tailored care.";
+      } else if (condition.toLowerCase().includes('headache')) {
+        return "For headaches, ensure you're staying hydrated, take regular breaks if working on screens, and practice relaxation techniques. Over-the-counter pain relievers can help, but consult a doctor if the headaches persist.";
+      } else if (condition.toLowerCase().includes('fever')) {
+        return "For fever, stay hydrated, rest, and take fever-reducing medications like paracetamol. If the fever persists or is accompanied by severe symptoms, consult a doctor.";
+      } else if (condition.toLowerCase().includes('cold')) {
+        return "For cold relief, drink plenty of fluids, rest, and use a humidifier. Over-the-counter cold medications can help alleviate symptoms, but if it worsens or persists, seek medical advice.";
+      } else if (condition.toLowerCase().includes('depression')) {
+        return "For depression, seeking professional help is essential. Talking to a therapist or counselor, along with medication prescribed by a healthcare professional, can significantly improve mental health. Reach out to a support group or helpline.";
+      } else if (condition.toLowerCase().includes('anxiety')) {
+        return "For anxiety, practice relaxation techniques such as deep breathing or mindfulness. Regular physical exercise and speaking to a mental health professional can help manage symptoms.";
+      } else if (condition.toLowerCase().includes('stress')) {
+        return "For stress, consider regular exercise, relaxation techniques, maintaining a balanced diet, and seeking professional counseling. Don't hesitate to take breaks and prioritize self-care.";
+      } else if (condition.toLowerCase().includes('insomnia')) {
+        return "For insomnia, establish a bedtime routine, avoid caffeine before bed, and ensure a comfortable sleeping environment. If it persists, consult a healthcare provider for further advice.";
+      } else if (condition.toLowerCase().includes('cough')) {
+        return "For a cough, ensure adequate rest, hydrate, and consider honey or warm teas to soothe your throat. If persistent or accompanied by shortness of breath, seek medical advice.";
+      } else if (condition.toLowerCase().includes('asthma')) {
+        return "For asthma, use inhalers as prescribed, avoid triggers, and ensure proper medication management. Regular check-ups with your doctor are essential.";
+      } else if (condition.toLowerCase().includes('allergies')) {
+        return "For allergies, consider avoiding triggers, using antihistamines, and consulting a doctor for long-term management. Immunotherapy may also be recommended.";
+      } else if (condition.toLowerCase().includes('acid reflux')) {
+        return "For acid reflux, try eating smaller meals, avoiding spicy and acidic foods, and elevating your head while sleeping. Consult with your doctor if symptoms persist.";
+      } else if (condition.toLowerCase().includes('chronic pain')) {
+        return "For chronic pain, consider physical therapy, stress management techniques, and pain-relieving medications. Speak with a pain management specialist for personalized care.";
+      } else if (condition.toLowerCase().includes('skin rash')) {
+        return "For skin rashes, avoid scratching, apply soothing lotions, and consult a dermatologist if the rash persists or worsens.";
+      } else if (condition.toLowerCase().includes('dizziness')) {
+        return "For dizziness, ensure you're hydrated, rest, and avoid sudden movements. If it persists or is accompanied by other symptoms, consult a doctor.";
+      } else if (condition.toLowerCase().includes('fatigue')) {
+        return "For fatigue, consider getting adequate sleep, maintaining a balanced diet, and exercising regularly. If persistent, consult a doctor to rule out underlying conditions.";
+      } else if (condition.toLowerCase().includes('nausea')) {
+        return "For nausea, try drinking ginger tea, staying hydrated, and eating light meals. If severe or persistent, consult a healthcare provider.";
+      } else if (condition.toLowerCase().includes('back pain')) {
+        return "For back pain, consider gentle stretches, maintaining good posture, and avoiding heavy lifting. If the pain persists, consult a specialist.";
+      } else if (condition.toLowerCase().includes('urinary tract infection')) {
+        return "For urinary tract infections, drink plenty of water, urinate frequently, and consider seeing a healthcare provider for antibiotics if necessary.";
+      } else {
+        return "For general health concerns, maintaining a balanced diet, regular physical activity, and adequate hydration are crucial. Always consult a healthcare professional for specific advice.";
+      }
+    }
+  </script>
+  
+</body>
+</html>
